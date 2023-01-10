@@ -7,6 +7,9 @@ pipeline {
     skipDefaultCheckout true
     timeout(time: 10, unit: 'MINUTES')
   }
+  triggers {
+    eventTrigger jmespathQuery("image.action=='update' && image.name=='${baseImageName}'")
+  }
   environment {
     REPO_OWNER = "${repoOwner}"
     REPO_NAME = "${repository}"
@@ -18,6 +21,7 @@ pipeline {
         beforeAgent true
         anyOf {
           branch 'pr-*'
+          triggeredBy 'EventTriggerCause'
         }
       }
       stages {
