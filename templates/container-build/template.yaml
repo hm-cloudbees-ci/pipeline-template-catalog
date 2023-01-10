@@ -7,7 +7,7 @@ parameters:
   - name: repoOwner
     type: string
     displayName: Repository Owner
-    defaultValue: REPLACE_GITHUB_ORG
+    defaultValue: hm-cloudbees-ci
   - name: repository
     type: string
     displayName: Repository

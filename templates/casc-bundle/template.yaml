@@ -7,14 +7,15 @@ parameters:
   - name: repoOwner
     type: string
     displayName: GitHub Organization
+    defaultValue: hm-cloudbees-ci
   - name: repository
     type: string
     displayName: GitHub Repository
-    defaultValue: cloudbees-ci-config-bundle
+    defaultValue: controller
   - name: githubCredentialId
     displayName: GitHub Credential ID
     type: CREDENTIALS
-    defaultValue: cloudbees-ci-workshop-github-app
+    defaultValue: cloudbees-ci-pipeline-workshop-github-app
 multibranch:
   markerFile: .markerfile
   branchSource:
@@ -41,3 +42,4 @@ multibranch:
             - stage:
                 verbosity: "failed"
             - "junit"
+
